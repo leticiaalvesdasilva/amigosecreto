@@ -45,17 +45,23 @@ function validar(){
     return true;
 }
 
+
 function sortearAmigo(){
-    let numero = parseInt(Math.random()* lista.length);
-    let nome = (lista[numero]);
-    lista = [];
-    adicionarTela();
-    resultado(nome);
-}
+    let nomeSorteado = validar();
+    if(nomeSorteado == true)
+    {        
+        let numero = parseInt(Math.random()* lista.length);
+        let nome = (lista[numero]);
+        lista = [];
+        adicionarTela();
+        resultado(nome);
+    }
+   
+    }
 
 function resultado(nome){
     console.log('O nome sorteado é:' + nome);
-    let ul = document.getElementById('resultado');
+    let ul = document.getElementById('resultado')
     ul.innerHTML = '';
     let li = document.createElement('li');
     li.textContent = 'O nome sorteado é:' + nome;
